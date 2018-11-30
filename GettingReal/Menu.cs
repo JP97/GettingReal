@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,8 @@ namespace GettingReal
 {
     public class Menu
     {
+        private Controller binding = new Controller();
+
         public void Show()
         {
             bool running = true;
@@ -21,10 +25,14 @@ namespace GettingReal
                         running = false;
                         break;
                     case "1":
-                        ShowStock();
+                        ShowProducts();
+                        break;
+                    case "2":
+                        RegisterNewProduct();
                         break;
                     default:
-                        Console.WriteLine("Prøv igen, dummy.");
+                        Console.WriteLine("Der er intet menupunkt for dit valg");
+                        Console.WriteLine("prøv igen...");
                         Console.ReadLine();
                         break;
                 }
@@ -33,12 +41,12 @@ namespace GettingReal
 
         private void ShowMenu()
         {
-            Console.WriteLine("Get Real~~~~~~");
+            Console.WriteLine("Svanninge Malerforretning: Lagersystem");
             Console.WriteLine("");
             Console.WriteLine("1. Vis Varer");//Implementer Vis varer på lager? -Sådan at varer ikke på lager, skjules fra brugeren?
-            Console.WriteLine("2. Opdater Varelager");
+            Console.WriteLine("2. Opret ny vare i systemet");
             Console.WriteLine("");
-            Console.WriteLine("0. Ãfslut Konsol");
+            Console.WriteLine("0. Afslut Systemet");
         }
 
         private string GetUserChoice()
@@ -48,19 +56,14 @@ namespace GettingReal
             return Console.ReadLine();
         }
 
-        public void ShowStock()
+        public void ShowProducts()
         {
-            Console.WriteLine("-----------------------------");
-            Warehouse myStuff = new Warehouse();
-            myStuff.ItemList();
-            Console.WriteLine("-----------------------------");
+            Console.Clear();
+            binding.ShowProductList();
         }
-        public void UpdateStock()
+        public void RegisterNewProduct()
         {
-            Console.WriteLine("-----------------------------");
-            //Vis Vareliste igen, med valgmulighed for at opdatere antal af enkelte items i listen? 
-            Console.WriteLine("-----------------------------");
+            binding.RegisterNewProduct();
         }
-
     }
 }
