@@ -55,7 +55,7 @@ namespace GettingReal
             }
         }
 
-        public Boolean Confirm()
+        public bool Confirm()
         {            
             Console.WriteLine("Er det korrekt?");
             Console.WriteLine("1: Ja");
