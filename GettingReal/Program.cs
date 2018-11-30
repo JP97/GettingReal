@@ -11,7 +11,7 @@ namespace GettingReal
         static void Main(string[] args)
         {
             Menu m = new Menu();
-            m.SwitchSystem();
+            m.Show();
         }
 
        
