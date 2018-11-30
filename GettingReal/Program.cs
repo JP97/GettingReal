@@ -10,14 +10,10 @@ namespace GettingReal
 	{
         static void Main(string[] args)
         {
-            Program myProgram = new Program();
-            myProgram.Run();
+            Menu m = new Menu();
+            m.SwitchSystem();
         }
 
-        void Run()
-        {
-            Menu menu = new Menu();
-            menu.Show();
-        }
+       
     }
 }
