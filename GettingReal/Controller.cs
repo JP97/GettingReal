@@ -15,7 +15,7 @@ namespace GettingReal
 
         public void UpdateQuantity()
         {
-
+            //Implementer denne        
         }
 
         public void RegisterNewProduct()
